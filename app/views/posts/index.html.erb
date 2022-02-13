@@ -1,2 +1,12 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>All posts</h1>
+<% @posts.each do |post| %>
+  <p style="display:inline">Title: </p><%= post.title %><br><br>
+  <%= post.body %><br><br>
+  <% if user_signed_in? %>
+    Author: <%= post.user.username %><br><br>
+  <% end %>
+  <br><br>
+<% end %>
+
+
+<%= link_to "New Post", new_post_path %>
