@@ -14,9 +14,13 @@
 
   <body>
    <%# _navbar is taken from bootstrap and modified %>
-   <%= render 'shared/navbar' %>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' %>
+    <% unless notice.nil? %>
+    <p class="notice"><%= notice %></p>
+    <% end %>
+    <% unless alert.nil? %>
+    <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

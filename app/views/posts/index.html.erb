@@ -1,4 +1,11 @@
-<h1>All posts</h1>
+<% if user_signed_in? %>
+  <h2>Welcome, <%= current_user.username %></h2>
+<% else %>
+  <h2>Hello, to see the authors of each post sign in or register!</h2>
+<% end %>
+
+
+<h3>All posts</h3>
 <% @posts.each do |post| %>
   <p style="display:inline">Title: </p><%= post.title %><br><br>
   <%= post.body %><br><br>
